@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: gray;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  min-width: 328px;
+  background: linear-gradient(
+    180deg,
+    #ffc1dd 0%,
+    #80e7f8 33%,
+    #ffc1dd 66%,
+    #80e7f8 100%
+  );
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.font--inter {
+  font-family: var(--font-inter);
+}
+
+.font--black-han-sans {
+  font-family: var(--font-black-han-sans);
+}
+
+.text--shadow-1 {
+  text-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.text--shadow-2 {
+  text-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.3),
+    0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+.text--shadow-3 {
+  text-shadow:
+    0px 4px 8px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.text--shadow-4 {
+  text-shadow:
+    0px 6px 10px rgba(0, 0, 0, 0.15),
+    0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+.text--shadow-5 {
+  text-shadow:
+    0px 8px 12px rgba(0, 0, 0, 0.15),
+    0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.text--shadow-figma {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

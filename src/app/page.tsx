@@ -1,101 +1,93 @@
-import Image from "next/image";
+import Link from 'next/link';
+import MenuIcon from '@mui/icons-material/Menu';
+import { skill } from '@/utility/data';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <header className="font--black-han-sans flex h-[56px] justify-between border-b-[1px] border-onPrimary text-24 text-onPrimary">
+        <button className="pl-2 leading-[56px]">
+          <Link href={'/'}>Portfolio</Link>
+        </button>
+        <div className="hidden justify-between gap-x-8 pr-4 tablet:flex">
+          <button className="text--shadow-1 leading-[56px]">기술</button>
+          <button className="text--shadow-1 leading-[56px]">개발 경험</button>
+          <button className="text--shadow-1 leading-[56px]">연구 경험</button>
+          <button className="text--shadow-1 leading-[56px]">
+            학력/논문/연락처
+          </button>
+        </div>
+        <button className="tablet:hidden">
+          <MenuIcon className="h-12 w-12 p-3" />
+        </button>
+      </header>
+      <main>
+        {/* Title */}
+        <div className="font--black-han-sans flex flex-wrap items-center gap-y-4 px-2 pt-12 text-onPrimary tablet:gap-y-7 tablet:pt-[80px]">
+          <h1 className="text--shadow-figma flex w-full shrink-0 items-center justify-center text-center text-24 tablet:text-40">
+            HCI 지식으로 개선안을 제시하는&nbsp;
+            <br className="tablet:hidden" />
+            프론트엔드 개발자
+          </h1>
+          <div className="flex w-full flex-wrap justify-center">
+            <div className="text--shadow-1 flex w-full shrink-0 items-center justify-center text-20 leading-[24px] tablet:text-32 tablet:leading-[36px]">
+              심재문
+            </div>
+            <div className="text--shadow-1 font--inter text-12 leading-[16px] tablet:text-20 tablet:leading-[24px]">
+              Sim Jaemoon
+            </div>
+          </div>
+        </div>
+        {/* Skill */}
+        <div className="mx-auto flex w-[320px] flex-wrap gap-y-4 px-2 pt-10 tablet:w-[440px] tablet:gap-y-8 tablet:pt-[60px]">
+          {skill.map((v, i) => (
+            <div key={i} className="w-full">
+              <div className="font--black-han-sans text--shadow-1 w-full shrink-0 text-center text-20 leading-[24px] text-onSecondary tablet:text-24 tablet:leading-[28px]">
+                # {v.name}&nbsp;
+              </div>
+              {'data' in v && (
+                <div className="font--inter text--shadow-1 text-12 text-center leading-[16px] tablet:text-16 tablet:leading-[20px]">
+                  {v.data?.join(', ')}
+                </div>
+              )}
+              <ul className="flex w-full flex-wrap gap-y-1 pl-10 tablet:gap-y-2 tablet:pl-[68px]">
+                {'dataArray' in v &&
+                  v.dataArray?.map((v2, i2) => (
+                    <li
+                      key={i2}
+                      className="text-12 w-full list-disc pl-8 -indent-8 tablet:pl-10 tablet:-indent-10 tablet:text-16"
+                    >
+                      <span className="text--shadow-1 font-bold">
+                        {v2.name} :&nbsp;
+                      </span>
+                      <span className="font--inter text--shadow-1">
+                        {v2.data.join(', ')}
+                      </span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        {/* Experience */}
+        <div className="pt-12 tablet:pt-[80px]">
+          <div className="font--black-han-sans text--shadow-1 pb-1 text-center text-32 leading-[36px] text-onSecondary tablet:pb-2 tablet:text-40 tablet:leading-[44px]">
+            2024
+          </div>
+          <div className="relative">
+            {/* Upper-Arrow */}
+            <div className="drop-shadow-3 relative w-full">
+              <div className="relative left-1/2 h-0 w-0 -translate-x-1/2 border-x-[40px] border-b-[80px] border-t-0 border-x-transparent border-b-background border-t-transparent tablet:border-x-[60px] tablet:border-b-[120px]" />
+              <div className="relative left-1/2 h-[2000px] w-10 -translate-x-1/2 bg-background tablet:w-[60px]" />
+            </div>
+            {/* Project-Bubble */}
+            <div className="absolute top-[96px] z-10 w-full tablet:top-[152px]">
+              <div className="relative left-1/2 h-10 w-[328px] -translate-x-1/2 bg-purple-50"></div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <footer></footer>
+    </>
   );
 }
