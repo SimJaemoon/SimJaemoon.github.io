@@ -1,22 +1,21 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
 
-import { Inter, Noto_Sans_KR, Black_Han_Sans } from 'next/font/google';
-
-export const notoSansKR = Noto_Sans_KR({
-  weight: ['400', '700'],
-  subsets: ['latin'],
+const notoSansKR = localFont({
+  src: './fonts/NotoSansKR-VariableFont_wght.ttf',
+  weight: '100 700',
 });
 
-export const inter = Inter({
+const inter = localFont({
+  src: './fonts/Inter-VariableFont_opsz,wght.ttf',
   weight: '400',
-  subsets: ['latin'],
   variable: '--font-inter',
 });
 
-export const blackHanSans = Black_Han_Sans({
+const blackHanSans = localFont({
+  src: './fonts/BlackHanSans-Regular.ttf',
   weight: '400',
-  subsets: ['latin'],
   variable: '--font-black-han-sans',
 });
 
