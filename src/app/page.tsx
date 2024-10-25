@@ -7,6 +7,11 @@ export default function Home() {
   return (
     <>
       <div id="ceiling" className="invisible absolute h-0 w-0" />
+      <button className="drop-shadow-5 text--shadow-1 fixed bottom-5 right-[5dvw] z-50 flex h-12 w-12 items-center justify-center rounded-[50%] border-[1px] border-onSecondary bg-background text-20 font-bold transition tablet:bottom-10 tablet:right-[17dvw] tablet:hover:bg-onSecondary tablet:hover:text-onPrimary">
+        <Link href={'#ceiling'} replace>
+          ↑
+        </Link>
+      </button>
       <header className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-onPrimary backdrop-blur-sm">
         <button className="pl-2 text-24 leading-[56px] tablet:transition tablet:hover:text-onSecondary">
           <Link href={'#ceiling'}>Portfolio</Link>
