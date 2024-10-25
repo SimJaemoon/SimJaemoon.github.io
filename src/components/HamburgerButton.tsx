@@ -2,46 +2,61 @@
 
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { navItems } from '@/utility/data';
 import Link from 'next/link';
 
 export default function HamburgerButton() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setIsOpen(false);
+    });
+  });
+
   return (
-    <div className="relative h-full tablet:hidden">
-      <button
-        className="h-full transition hover:text-onSecondary"
-        onClick={(e) => {
-          setIsOpen((prev) => !prev);
-          e.stopPropagation();
-        }}
-      >
-        {!isOpen ? (
-          <MenuIcon className="h-12 w-12 pl-1 pr-2" />
-        ) : (
-          <MenuOpenIcon className="h-12 w-12 pl-1 pr-2" />
-        )}
-      </button>
+    <>
+      <div className="relative h-full tablet:hidden">
+        <button
+          className="h-full transition hover:text-onSecondary"
+          onClick={(e) => {
+            setIsOpen((prev) => !prev);
+            e.stopPropagation();
+          }}
+        >
+          {!isOpen ? (
+            <MenuIcon className="h-12 w-12 pl-1 pr-2" />
+          ) : (
+            <MenuOpenIcon className="h-12 w-12 pl-1 pr-2" />
+          )}
+        </button>
+      </div>
       <nav
-        className={`absolute right-0 z-10 flex h-[30dvh] w-dvw flex-col bg-background/80 text-20 leading-[24px] text-onBackground transition-all ${!isOpen ? 'left-full' : '-left-[calc(100dvw-100%)]'} `}
-        // onClick={(e) => {
-        //   setIsOpen((prev) => !prev);
-        //   e.stopPropagation();
-        // }}
+        className={`absolute top-full z-10 h-[30dvh] w-full overflow-hidden ${!isOpen ? 'invisible' : 'visible'}`}
       >
-        <button className="text--shadow-1 h-1/4 transition hover:text-onSecondary">
-          <Link href={'#header'}>기술</Link>
-        </button>
-        <button className="text--shadow-1 h-1/4 transition hover:text-onSecondary">
-          <Link href="#develop">개발 경험</Link>
-        </button>
-        <button className="text--shadow-1 h-1/4 transition hover:text-onSecondary">
-          <Link href="#research">연구 경험</Link>
-        </button>
-        <button className="text--shadow-1 h-1/4 transition hover:text-onSecondary">
-          <Link href="#footer">학력/논문/연락처</Link>
-        </button>
+        <div
+          className={`relative flex h-full w-full flex-col rounded-b-[12px] bg-onBackground/40 text-20 leading-[24px] text-onPrimary transition-all ${!isOpen ? '-top-full' : 'top-0'}`}
+        >
+          {navItems.map((v, i) => (
+            <button
+              key={i}
+              className={`text--shadow-1 h-1/4 w-full border-dashed border-background/25 transition hover:text-onSecondary ${i + 1 === navItems.length ? '' : 'border-b-[1px]'}`}
+              onClick={(e) => {
+                setIsOpen(false);
+                e.stopPropagation();
+              }}
+            >
+              <Link
+                href={v.href}
+                className="flex h-full w-full items-center justify-center"
+              >
+                {v.name}
+              </Link>
+            </button>
+          ))}
+        </div>
       </nav>
-    </div>
+    </>
   );
 }

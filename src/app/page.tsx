@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import HamburgerButton from '@/components/HamburgerButton';
-import { paper, researchDescription, skill } from '@/utility/data';
+import { navItems, paper, researchDescription, skill } from '@/utility/data';
 import ProjectBubbles from '@/components/ProjectBubbles';
 
 export default function Home() {
@@ -14,18 +14,14 @@ export default function Home() {
           <Link href={'#header'}>Portfolio</Link>
         </button>
         <nav className="hidden justify-between gap-x-8 pr-4 tablet:flex">
-          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
-            <Link href={'#header'}>기술</Link>
-          </button>
-          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
-            <Link href="#develop">개발 경험</Link>
-          </button>
-          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
-            <Link href="#research">연구 경험</Link>
-          </button>
-          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
-            <Link href="#footer">학력/논문/연락처</Link>
-          </button>
+          {navItems.map((v, i) => (
+            <button
+              key={i}
+              className="text--shadow-1 leading-[56px] transition hover:text-onSecondary"
+            >
+              <Link href={v.href}>{v.name}</Link>
+            </button>
+          ))}
         </nav>
         <HamburgerButton />
       </header>

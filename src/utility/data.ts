@@ -1,3 +1,22 @@
+export const navItems = [
+  {
+    name: '기술',
+    href: '#header',
+  },
+  {
+    name: '개발 경험',
+    href: '#develop',
+  },
+  {
+    name: '연구 경험',
+    href: '#research',
+  },
+  {
+    name: '학력/논문/연락처',
+    href: '#footer',
+  },
+];
+
 export const skill = [
   {
     name: '기획',
@@ -59,8 +78,9 @@ export const developProjectData: ProjectData[] = [
   {
     title: '대형마트 웹/앱 개선 방향 제안',
     timeline: '2024.04 ~ 2024.09 (1인 프로젝트)',
-    figmaURL: '/',
-    githubURL: '/',
+    figmaURL:
+      'https://www.figma.com/design/eYS9TCDxyCUX8tsLPq5sGO/TP_Foodsearch_%EB%B0%B0%ED%8F%AC_000000?node-id=23-995&t=XrUtWrf96rONdBw5-1',
+    githubURL: 'https://github.com/simJaemoon/food-search/',
     summary:
       'X세대 온라인 식료품 구매 거부감을 해소하기 위한, 새로운 온라인 장보기 경험 설계',
     contentArray: [
