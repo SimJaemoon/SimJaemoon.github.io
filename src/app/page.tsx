@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import MenuIcon from '@mui/icons-material/Menu';
+import HamburgerButton from '@/components/HamburgerButton';
 import { paper, researchDescription, skill } from '@/utility/data';
 import ProjectBubbles from '@/components/ProjectBubbles';
 
@@ -8,28 +8,26 @@ export default function Home() {
     <>
       <header
         id="header"
-        className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-24 text-onPrimary"
+        className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-24 text-onPrimary backdrop-blur-sm"
       >
-        <button className="pl-2 leading-[56px]">
-          <Link href={'/'}>Portfolio</Link>
+        <button className="pl-2 leading-[56px] transition hover:text-onSecondary">
+          <Link href={'#header'}>Portfolio</Link>
         </button>
-        <div className="hidden justify-between gap-x-8 pr-4 tablet:flex">
-          <button className="text--shadow-1 leading-[56px]">
+        <nav className="hidden justify-between gap-x-8 pr-4 tablet:flex">
+          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
             <Link href={'#header'}>기술</Link>
           </button>
-          <button className="text--shadow-1 leading-[56px]">
+          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
             <Link href="#develop">개발 경험</Link>
           </button>
-          <button className="text--shadow-1 leading-[56px]">
+          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
             <Link href="#research">연구 경험</Link>
           </button>
-          <button className="text--shadow-1 leading-[56px]">
+          <button className="text--shadow-1 leading-[56px] transition hover:text-onSecondary">
             <Link href="#footer">학력/논문/연락처</Link>
           </button>
-        </div>
-        <button className="tablet:hidden">
-          <MenuIcon className="h-12 w-12 p-3" />
-        </button>
+        </nav>
+        <HamburgerButton />
       </header>
       <main>
         {/* Title */}
@@ -84,11 +82,9 @@ export default function Home() {
           <ProjectBubbles />
         </div>
       </main>
-      <footer className="pb-10">
-        <div
-          id="footer"
-          className="mx-auto mt-[72px] w-[320px] tablet:mt-[108px] tablet:w-[480px]"
-        >
+      <footer className="relative pb-10">
+        <div id="footer" className="absolute -top-[72px] h-0 w-0" />
+        <div className="mx-auto mt-[72px] w-[320px] tablet:mt-[108px] tablet:w-[480px]">
           <div className="font--black-han-sans text--shadow-1 mb-2 text-center text-[40px] leading-[44px] text-onSecondary underline tablet:mb-3 tablet:text-[48px] tablet:leading-[52px]">
             학력
           </div>

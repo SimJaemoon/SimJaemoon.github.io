@@ -5,7 +5,8 @@ export default function ProjectBubbles() {
   return (
     <>
       {/* Devolop-Experience */}
-      <div id="develop">
+      <div className="relative">
+        <div id="develop" className="absolute -top-[72px] h-0 w-0" />
         <div className="font--black-han-sans text--shadow-1 pb-1 text-center text-32 leading-[36px] text-onSecondary tablet:pb-2 tablet:text-40 tablet:leading-[44px]">
           2024
         </div>
@@ -39,10 +40,8 @@ export default function ProjectBubbles() {
         </div>
       </div>
       {/* Divdier */}
-      <div
-        id="research"
-        className="my-12 flex flex-col gap-y-2 tablet:my-[72px] tablet:gap-y-3"
-      >
+      <div className="relative my-12 flex flex-col gap-y-2 tablet:my-[72px] tablet:gap-y-3">
+        <div id="research" className="absolute -top-[72px] h-0 w-0" />
         <div className="font--black-han-sans text--shadow-1 text-center text-24 leading-[28px] text-onPrimary tablet:text-32 tablet:leading-[36px]">
           프론트엔드 개발자
         </div>
