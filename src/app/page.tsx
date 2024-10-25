@@ -8,16 +8,16 @@ export default function Home() {
     <>
       <header
         id="header"
-        className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-24 text-onPrimary backdrop-blur-sm"
+        className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-onPrimary backdrop-blur-sm"
       >
-        <button className="pl-2 leading-[56px] transition hover:text-onSecondary">
+        <button className="pl-2 text-24 leading-[56px] transition hover:text-onSecondary">
           <Link href={'#header'}>Portfolio</Link>
         </button>
         <nav className="hidden justify-between gap-x-8 pr-4 tablet:flex">
           {navItems.map((v, i) => (
             <button
               key={i}
-              className="text--shadow-1 leading-[56px] transition hover:text-onSecondary"
+              className="text--shadow-1 text-28 leading-[56px] transition hover:text-onSecondary"
             >
               <Link href={v.href}>{v.name}</Link>
             </button>
@@ -34,7 +34,7 @@ export default function Home() {
             프론트엔드 개발자
           </h1>
           <div className="flex w-full flex-wrap justify-center">
-            <div className="text--shadow-1 flex w-full shrink-0 items-center justify-center text-20 leading-[24px] tablet:text-32 tablet:leading-[36px]">
+            <div className="text--shadow-1 flex w-full shrink-0 items-center justify-center text-20 leading-[24px] tablet:text-28 tablet:leading-[32px]">
               심재문
             </div>
             <div className="text--shadow-1 font--inter text-12 leading-[16px] tablet:text-20 tablet:leading-[24px]">

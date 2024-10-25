@@ -17,18 +17,18 @@ export default function HamburgerButton() {
 
   return (
     <>
-      <div className="relative h-full tablet:hidden">
+      <div className="relative h-full w-12 tablet:hidden">
         <button
-          className="h-full transition hover:text-onSecondary"
+          className="h-full w-full transition hover:text-onSecondary"
           onClick={(e) => {
             setIsOpen((prev) => !prev);
             e.stopPropagation();
           }}
         >
           {!isOpen ? (
-            <MenuIcon className="h-12 w-12 pl-1 pr-2" />
+            <MenuIcon className="h-full w-full pl-1 pr-2" />
           ) : (
-            <MenuOpenIcon className="h-12 w-12 pl-1 pr-2" />
+            <MenuOpenIcon className="h-full w-full pl-1 pr-2" />
           )}
         </button>
       </div>

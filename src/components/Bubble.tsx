@@ -26,16 +26,16 @@ export default function Bubble({
           </div>
         </div>
         {figmaURL || githubURL ? (
-          <div className="font--inter flex h-full w-[25%] flex-row-reverse flex-wrap content-center gap-y-1 text-14 text-onSecondary">
+          <div className="font--inter flex h-full w-[25%] flex-col justify-center gap-y-1 text-14 text-onSecondary">
             {figmaURL && (
-              <button className="text--shadow-1 shrink-0 font-bold">
+              <button className="text--shadow-1 text-right font-bold">
                 <Link href={figmaURL} target="_blank">
                   Figma ↗
                 </Link>
               </button>
             )}
             {githubURL && (
-              <button className="text--shadow-1 shrink-0 font-bold">
+              <button className="text--shadow-1 text-right font-bold">
                 <Link href={githubURL} target="_blank">
                   Github ↗
                 </Link>
