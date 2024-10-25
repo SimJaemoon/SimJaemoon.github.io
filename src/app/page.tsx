@@ -19,7 +19,9 @@ export default function Home() {
               key={i}
               className="text--shadow-1 text-28 leading-[56px] transition hover:text-onSecondary"
             >
-              <Link href={v.href}>{v.name}</Link>
+              <Link href={v.href} replace>
+                {v.name}
+              </Link>
             </button>
           ))}
         </nav>

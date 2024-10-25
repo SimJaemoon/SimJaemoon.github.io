@@ -49,6 +49,7 @@ export default function HamburgerButton() {
             >
               <Link
                 href={v.href}
+                replace
                 className="flex h-full w-full items-center justify-center"
               >
                 {v.name}
