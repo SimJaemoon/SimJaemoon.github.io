@@ -1,21 +1,30 @@
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
-import { skill } from '@/utility/data';
+import { paper, researchDescription, skill } from '@/utility/data';
 import ProjectBubbles from '@/components/ProjectBubbles';
 
 export default function Home() {
   return (
     <>
-      <header className="font--black-han-sans flex h-[56px] justify-between border-b-[1px] border-onPrimary text-24 text-onPrimary">
+      <header
+        id="header"
+        className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-24 text-onPrimary"
+      >
         <button className="pl-2 leading-[56px]">
           <Link href={'/'}>Portfolio</Link>
         </button>
         <div className="hidden justify-between gap-x-8 pr-4 tablet:flex">
-          <button className="text--shadow-1 leading-[56px]">기술</button>
-          <button className="text--shadow-1 leading-[56px]">개발 경험</button>
-          <button className="text--shadow-1 leading-[56px]">연구 경험</button>
           <button className="text--shadow-1 leading-[56px]">
-            학력/논문/연락처
+            <Link href={'#header'}>기술</Link>
+          </button>
+          <button className="text--shadow-1 leading-[56px]">
+            <Link href="#develop">개발 경험</Link>
+          </button>
+          <button className="text--shadow-1 leading-[56px]">
+            <Link href="#research">연구 경험</Link>
+          </button>
+          <button className="text--shadow-1 leading-[56px]">
+            <Link href="#footer">학력/논문/연락처</Link>
           </button>
         </div>
         <button className="tablet:hidden">
@@ -72,13 +81,63 @@ export default function Home() {
         </div>
         {/* Experience */}
         <div className="pt-12 tablet:pt-[80px]">
-          <div className="font--black-han-sans text--shadow-1 pb-1 text-center text-32 leading-[36px] text-onSecondary tablet:pb-2 tablet:text-40 tablet:leading-[44px]">
-            2024
-          </div>
           <ProjectBubbles />
         </div>
       </main>
-      <footer></footer>
+      <footer className="pb-10">
+        <div
+          id="footer"
+          className="mx-auto mt-[72px] w-[320px] tablet:mt-[108px] tablet:w-[480px]"
+        >
+          <div className="font--black-han-sans text--shadow-1 mb-2 text-center text-[40px] leading-[44px] text-onSecondary underline tablet:mb-3 tablet:text-[48px] tablet:leading-[52px]">
+            학력
+          </div>
+          <div className="text--shadow-1 mb-1 text-center text-14 leading-[18px] tablet:mb-2 tablet:text-[20px] tablet:leading-[24px]">
+            연세대학교 산업공학과 석사 졸업
+          </div>
+          <div className="font--inter text--shadow-1 text-center text-14 leading-[18px] tablet:text-[20px] tablet:leading-[24px]">
+            Human-Computer Interaction(HCI)
+          </div>
+        </div>
+        <div className="mx-auto mt-[72px] w-[90%] min-w-[308px] max-w-[488px] px-1 tablet:mt-[108px]">
+          <div className="font--black-han-sans text--shadow-1 mb-2 text-center text-[40px] leading-[44px] text-onSecondary underline tablet:mb-3 tablet:text-[48px] tablet:leading-[52px]">
+            논문
+          </div>
+          <ol className="font--inter text--shadow-1 flex list-decimal flex-col gap-y-2 break-all pl-6 text-14 leading-[18px] tablet:gap-y-3 tablet:text-[16px] tablet:leading-[20px]">
+            {paper.map((v, i) => (
+              <li key={i}>{v}</li>
+            ))}
+          </ol>
+          <ul className="text--shadow-1 mt-4 flex list-disc flex-col gap-y-1 pl-10 text-14 leading-[18px] tablet:mt-6 tablet:gap-y-2 tablet:text-[16px] tablet:leading-[20px]">
+            <li>
+              <span className="font--inter font-bold">Keyword : </span>
+              {researchDescription.keyword.join(' / ')}
+            </li>
+            <li>
+              <span className="font--inter font-bold">Domain : </span>
+              {researchDescription.domain.join(' / ')}
+            </li>
+          </ul>
+        </div>
+        <div className="mx-auto mb-6 mt-[72px] w-[320px] tablet:mb-9 tablet:mt-[108px] tablet:w-[480px]">
+          <div className="font--black-han-sans text--shadow-1 mb-1 w-full shrink-0 text-center text-24 leading-[28px] text-onSecondary tablet:mb-2 tablet:text-28 tablet:leading-[32px]">
+            # Email
+          </div>
+          <div className="text--shadow-1 text-center text-14 leading-[18px] tablet:mb-2 tablet:text-[20px] tablet:leading-[24px]">
+            limun1324@gmail.com
+          </div>
+        </div>
+        <div className="mx-auto w-[320px] tablet:w-[480px]">
+          <div className="font--black-han-sans text--shadow-1 mb-1 w-full shrink-0 text-center text-24 leading-[28px] text-onSecondary tablet:mb-2 tablet:text-28 tablet:leading-[32px]">
+            # Github
+          </div>
+          <div className="text--shadow-1 text-center text-14 leading-[18px] underline transition hover:text-onSecondary tablet:mb-2 tablet:text-[20px] tablet:leading-[24px]">
+            <Link href={'https://github.com/SimJaemoon'} target="_blank">
+              https://github.com/SimJaemoon
+            </Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

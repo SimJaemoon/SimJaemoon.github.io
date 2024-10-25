@@ -12,10 +12,12 @@ export default function Bubble({
   skills,
 }: ProjectData) {
   return (
-    <div className="relative left-1/2 w-[90%] min-w-[296px] max-w-[480px] -translate-x-1/2 rounded-[12px] shadow-3">
+    <div className="relative left-1/2 w-[90%] min-w-[304px] max-w-[480px] -translate-x-1/2 rounded-[12px] shadow-3">
       {/* Bubble-Title */}
       <div className="flex h-[60px] w-full rounded-t-[12px] bg-primary py-2 pl-3 pr-2">
-        <div className="flex h-full w-[75%] flex-wrap content-center text-onPrimary">
+        <div
+          className={`flex h-full ${figmaURL || githubURL ? 'w-[75%]' : 'w-full'} flex-wrap content-center text-onPrimary`}
+        >
           <div className="text--shadow-1 w-full shrink-0 text-16 font-bold">
             {title}
           </div>
@@ -23,22 +25,24 @@ export default function Bubble({
             {timeline}
           </div>
         </div>
-        <div className="font--inter flex h-full w-[25%] flex-row-reverse flex-wrap content-center gap-y-1 text-14 text-onSecondary">
-          {figmaURL && (
-            <button className="text--shadow-1 shrink-0 font-bold">
-              <Link href={figmaURL} target="_blank">
-                Figma ↗
-              </Link>
-            </button>
-          )}
-          {githubURL && (
-            <button className="text--shadow-1 shrink-0 font-bold">
-              <Link href={githubURL} target="_blank">
-                Github ↗
-              </Link>
-            </button>
-          )}
-        </div>
+        {figmaURL || githubURL ? (
+          <div className="font--inter flex h-full w-[25%] flex-row-reverse flex-wrap content-center gap-y-1 text-14 text-onSecondary">
+            {figmaURL && (
+              <button className="text--shadow-1 shrink-0 font-bold">
+                <Link href={figmaURL} target="_blank">
+                  Figma ↗
+                </Link>
+              </button>
+            )}
+            {githubURL && (
+              <button className="text--shadow-1 shrink-0 font-bold">
+                <Link href={githubURL} target="_blank">
+                  Github ↗
+                </Link>
+              </button>
+            )}
+          </div>
+        ) : null}
       </div>
       {/* Bubble-Content */}
       <div className="rounded-b-[12px] bg-background px-4 pb-4 pt-2">
