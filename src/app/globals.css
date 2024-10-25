@@ -15,6 +15,7 @@ body {
     #ffc1dd 66%,
     #80e7f8 100%
   );
+  scroll-behavior: smooth;
 }
 
 .font--inter {

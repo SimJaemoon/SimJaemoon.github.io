@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import { skill } from '@/utility/data';
+import ProjectBubbles from '@/components/ProjectBubbles';
 
 export default function Home() {
   return (
@@ -46,16 +47,16 @@ export default function Home() {
                 # {v.name}&nbsp;
               </div>
               {'data' in v && (
-                <div className="font--inter text--shadow-1 text-12 text-center leading-[16px] tablet:text-16 tablet:leading-[20px]">
+                <div className="font--inter text--shadow-1 text-center text-12 leading-[16px] tablet:text-16 tablet:leading-[20px]">
                   {v.data?.join(', ')}
                 </div>
               )}
-              <ul className="flex w-full flex-wrap gap-y-1 pl-10 tablet:gap-y-2 tablet:pl-[68px]">
+              <ul className="flex w-full list-disc flex-wrap gap-y-1 pl-10 tablet:gap-y-2 tablet:pl-[68px]">
                 {'dataArray' in v &&
                   v.dataArray?.map((v2, i2) => (
                     <li
                       key={i2}
-                      className="text-12 w-full list-disc pl-8 -indent-8 tablet:pl-10 tablet:-indent-10 tablet:text-16"
+                      className="w-full pl-8 -indent-8 text-12 tablet:pl-10 tablet:-indent-10 tablet:text-16"
                     >
                       <span className="text--shadow-1 font-bold">
                         {v2.name} :&nbsp;
@@ -74,17 +75,7 @@ export default function Home() {
           <div className="font--black-han-sans text--shadow-1 pb-1 text-center text-32 leading-[36px] text-onSecondary tablet:pb-2 tablet:text-40 tablet:leading-[44px]">
             2024
           </div>
-          <div className="relative">
-            {/* Upper-Arrow */}
-            <div className="drop-shadow-3 relative w-full">
-              <div className="relative left-1/2 h-0 w-0 -translate-x-1/2 border-x-[40px] border-b-[80px] border-t-0 border-x-transparent border-b-background border-t-transparent tablet:border-x-[60px] tablet:border-b-[120px]" />
-              <div className="relative left-1/2 h-[2000px] w-10 -translate-x-1/2 bg-background tablet:w-[60px]" />
-            </div>
-            {/* Project-Bubble */}
-            <div className="absolute top-[96px] z-10 w-full tablet:top-[152px]">
-              <div className="relative left-1/2 h-10 w-[328px] -translate-x-1/2 bg-purple-50"></div>
-            </div>
-          </div>
+          <ProjectBubbles />
         </div>
       </main>
       <footer></footer>
