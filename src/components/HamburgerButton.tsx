@@ -17,18 +17,18 @@ export default function HamburgerButton() {
 
   return (
     <>
-      <div className="relative h-full w-12 tablet:hidden">
+      <div className="relative h-full pl-1 pr-2 tablet:hidden">
         <button
-          className="h-full w-full transition hover:text-onSecondary"
+          className="h-full w-full tablet:transition tablet:hover:text-onSecondary"
           onClick={(e) => {
             setIsOpen((prev) => !prev);
             e.stopPropagation();
           }}
         >
           {!isOpen ? (
-            <MenuIcon className="h-full w-full pl-1 pr-2" />
+            <MenuIcon fontSize="large" />
           ) : (
-            <MenuOpenIcon className="h-full w-full pl-1 pr-2" />
+            <MenuOpenIcon fontSize="large" />
           )}
         </button>
       </div>
@@ -41,7 +41,7 @@ export default function HamburgerButton() {
           {navItems.map((v, i) => (
             <button
               key={i}
-              className={`text--shadow-1 h-1/4 w-full border-dashed border-background/25 transition hover:text-onSecondary ${i + 1 === navItems.length ? '' : 'border-b-[1px]'}`}
+              className={`text--shadow-1 h-1/4 w-full border-dashed border-background/25 tablet:transition tablet:hover:text-onSecondary ${i + 1 === navItems.length ? '' : 'border-b-[1px]'}`}
               onClick={(e) => {
                 setIsOpen(false);
                 e.stopPropagation();

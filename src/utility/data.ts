@@ -1,7 +1,7 @@
 export const navItems = [
   {
     name: '기술',
-    href: '#header',
+    href: '#ceiling',
   },
   {
     name: '개발 경험',

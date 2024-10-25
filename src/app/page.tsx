@@ -6,18 +6,19 @@ import ProjectBubbles from '@/components/ProjectBubbles';
 export default function Home() {
   return (
     <>
+      <div id="ceiling" className="invisible absolute h-0 w-0" />
       <header
         id="header"
         className="font--black-han-sans sticky top-0 z-50 flex h-[56px] justify-between border-b-[1px] border-onPrimary text-onPrimary backdrop-blur-sm"
       >
-        <button className="pl-2 text-24 leading-[56px] transition hover:text-onSecondary">
-          <Link href={'#header'}>Portfolio</Link>
+        <button className="pl-2 text-24 leading-[56px] tablet:transition tablet:hover:text-onSecondary">
+          <Link href={'#ceiling'}>Portfolio</Link>
         </button>
         <nav className="hidden justify-between gap-x-8 pr-4 tablet:flex">
           {navItems.map((v, i) => (
             <button
               key={i}
-              className="text--shadow-1 text-28 leading-[56px] transition hover:text-onSecondary"
+              className="text--shadow-1 text-28 leading-[56px] tablet:transition tablet:hover:text-onSecondary"
             >
               <Link href={v.href} replace>
                 {v.name}
@@ -125,7 +126,7 @@ export default function Home() {
           <div className="font--black-han-sans text--shadow-1 mb-1 w-full shrink-0 text-center text-24 leading-[28px] text-onSecondary tablet:mb-2 tablet:text-28 tablet:leading-[32px]">
             # Github
           </div>
-          <div className="text--shadow-1 text-center text-14 leading-[18px] underline transition hover:text-onSecondary tablet:mb-2 tablet:text-[20px] tablet:leading-[24px]">
+          <div className="text--shadow-1 text-center text-14 leading-[18px] underline tablet:mb-2 tablet:text-[20px] tablet:leading-[24px] tablet:transition tablet:hover:text-onSecondary">
             <Link href={'https://github.com/SimJaemoon'} target="_blank">
               https://github.com/SimJaemoon
             </Link>
