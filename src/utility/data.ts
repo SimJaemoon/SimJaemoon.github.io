@@ -60,14 +60,16 @@ export type ProjectData = {
   contents?: string[];
   contentArray?: { step: string; description: string[] }[];
   skills: string[];
+  siteURL?: string;
 };
 
 export const developProjectData: ProjectData[] = [
   {
     title: 'Portfolio 반응형 웹사이트',
     timeline: '2024.10 (1인 프로젝트)',
-    figmaURL: '/',
-    githubURL: '/',
+    figmaURL:
+      'https://www.figma.com/design/iGb2BVo2CCDmXOyoi1rpor/blog-portfolio_%EB%B0%B0%ED%8F%AC_241026?node-id=0-1',
+    githubURL: 'https://github.com/SimJaemoon/SimJaemoon.github.io',
     summary: 'Portfolio 에 2가지 경험을 Seamless 하게 녹여내는 page 구현',
     contents: [
       '경험 :  1. 프론트엔드  2. HCI 연구원',
@@ -114,6 +116,7 @@ export const developProjectData: ProjectData[] = [
       'Vercel Postgres SDK(SQL)',
       'SWR',
     ],
+    siteURL: 'https://food-search-simjaemoons-projects.vercel.app',
   },
 ];
 

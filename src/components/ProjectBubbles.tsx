@@ -30,6 +30,7 @@ export default function ProjectBubbles() {
                   contents={v?.contents}
                   contentArray={v?.contentArray}
                   skills={v.skills}
+                  siteURL={v?.siteURL}
                 />
               ))}
             </div>

@@ -10,6 +10,7 @@ export default function Bubble({
   contents,
   contentArray,
   skills,
+  siteURL,
 }: ProjectData) {
   return (
     <div className="relative left-1/2 w-[90%] min-w-[304px] max-w-[480px] -translate-x-1/2 rounded-[12px] shadow-3">
@@ -26,16 +27,16 @@ export default function Bubble({
           </div>
         </div>
         {figmaURL || githubURL ? (
-          <div className="font--inter flex h-full w-[25%] flex-col justify-center gap-y-1 text-14 text-onSecondary">
+          <div className="font--inter flex h-full w-[25%] flex-col justify-center gap-y-1 text-14 text-onSecondary tablet:text-onPrimary">
             {figmaURL && (
-              <button className="text--shadow-1 text-right font-bold">
+              <button className="text--shadow-1 text-right font-bold tablet:transition tablet:hover:text-onSecondary">
                 <Link href={figmaURL} target="_blank">
                   Figma ↗
                 </Link>
               </button>
             )}
             {githubURL && (
-              <button className="text--shadow-1 text-right font-bold">
+              <button className="text--shadow-1 text-right font-bold tablet:transition tablet:hover:text-onSecondary">
                 <Link href={githubURL} target="_blank">
                   Github ↗
                 </Link>
@@ -71,6 +72,15 @@ export default function Bubble({
         <div className="font--inter mt-4 rounded-[8px] bg-onBackground/60 px-3 py-1 text-14 font-bold text-background">
           {skills.join(', ')}
         </div>
+        {siteURL && (
+          <div className="mt-3 w-full text-center text-14 font-bold">
+            <button className="text--shadow-1 underline tablet:transition tablet:hover:text-onSecondary">
+              <Link href={siteURL} target="_blank">
+                배포된 사이트 보러가기 ↗
+              </Link>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
