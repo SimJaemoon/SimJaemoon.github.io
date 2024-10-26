@@ -1,5 +1,8 @@
+
+
 ## 프로젝트 목적 (작성 중)
 ### Portfolio 반응형 웹사이트
+[배포된 사이트 보러가기 ↗](https://simjaemoon.github.io/)
 
 * Portfolio 에 2가지 경험을 Seamless 하게 녹여내는 page 구현
 
