@@ -10,9 +10,13 @@ export default function HamburgerButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
       setIsOpen(false);
-    });
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   });
 
   return (
