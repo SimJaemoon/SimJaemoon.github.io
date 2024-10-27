@@ -37,7 +37,7 @@ export default function HamburgerButton() {
         </button>
       </div>
       <nav
-        className={`absolute top-full z-10 h-[30dvh] w-full overflow-hidden ${!isOpen ? 'invisible' : 'visible'}`}
+        className={`absolute top-full z-10 h-[30dvh] min-h-[55dvh] w-full overflow-hidden ${!isOpen ? 'invisible' : 'visible'}`}
       >
         <div
           className={`relative flex h-full w-full flex-col rounded-b-[12px] bg-onBackground/40 text-20 leading-[24px] text-onPrimary transition-all duration-300 ${!isOpen ? '-top-full' : 'top-0'}`}
