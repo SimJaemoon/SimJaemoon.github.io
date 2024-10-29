@@ -2,6 +2,7 @@ import { ProjectData } from '@/utility/data';
 import Link from 'next/link';
 
 export default function Bubble({
+  status,
   title,
   timeline,
   figmaURL,
@@ -11,11 +12,14 @@ export default function Bubble({
   contentArray,
   skills,
   siteURL,
+  reportURL,
 }: ProjectData) {
   return (
-    <div className="relative left-1/2 w-[90%] min-w-[304px] max-w-[480px] -translate-x-1/2 rounded-[12px] shadow-3">
+    <div className="relative left-1/2 w-[90%] min-w-[304px] max-w-[480px] -translate-x-1/2 break-all rounded-[12px] shadow-3">
       {/* Bubble-Title */}
-      <div className="flex h-[60px] w-full rounded-t-[12px] bg-primary py-2 pl-3 pr-2">
+      <div
+        className={`flex h-[60px] w-full rounded-t-[12px] py-2 pl-3 pr-2 ${status === 'WIP' ? 'bg-WIP' : 'bg-primary'}`}
+      >
         <div
           className={`flex h-full ${figmaURL || githubURL ? 'w-[75%]' : 'w-full'} flex-wrap content-center text-onPrimary`}
         >
@@ -56,13 +60,18 @@ export default function Bubble({
           </ul>
         )}
         {contentArray && (
-          <ol className="mt-2 flex list-decimal flex-wrap gap-y-3 pl-6 text-14">
+          <ol className="mt-2 flex list-[square] flex-wrap gap-y-3 pl-6 text-14">
             {contentArray.map((v, i) => (
               <li key={i}>
                 <div className="font-bold">{v.step}</div>
                 <ul className="list-disc pl-6">
                   {v.description.map((v2, i2) => (
-                    <li key={i2}>{v2}</li>
+                    <li
+                      key={i2}
+                      className={`${i2 + 1 === v.description.length ? '' : 'mb-1'}`}
+                    >
+                      {v2}
+                    </li>
                   ))}
                 </ul>
               </li>
@@ -72,11 +81,20 @@ export default function Bubble({
         <div className="font--inter mt-4 rounded-[8px] bg-onBackground/60 px-3 py-1 text-14 font-bold text-background">
           {skills.join(', ')}
         </div>
+        {reportURL && (
+          <div className="mt-3 w-full text-center text-14 font-bold">
+            <button className="text--shadow-1 underline tablet:transition tablet:hover:text-onSecondary">
+              <Link href={reportURL} target="_blank">
+                프로젝트 보고서 보러 가기 ↗
+              </Link>
+            </button>
+          </div>
+        )}
         {siteURL && (
           <div className="mt-3 w-full text-center text-14 font-bold">
             <button className="text--shadow-1 underline tablet:transition tablet:hover:text-onSecondary">
               <Link href={siteURL} target="_blank">
-                배포된 사이트 보러가기 ↗
+                배포된 사이트 보러 가기 ↗
               </Link>
             </button>
           </div>

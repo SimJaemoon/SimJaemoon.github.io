@@ -19,6 +19,7 @@ const config: Config = {
         onPrimary: '#FFFFFF',
         onSecondary: '#FDFD8A',
         onBackground: '#000000',
+        WIP: '#8B8B8B',
       },
       boxShadow: {
         '1': '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',

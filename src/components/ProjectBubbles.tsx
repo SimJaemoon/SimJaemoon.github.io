@@ -22,6 +22,7 @@ export default function ProjectBubbles() {
               {developProjectData.map((v, i) => (
                 <Bubble
                   key={i}
+                  status={v.status}
                   title={v.title}
                   timeline={v.timeline}
                   figmaURL={v.figmaURL}
@@ -30,6 +31,7 @@ export default function ProjectBubbles() {
                   contents={v?.contents}
                   contentArray={v?.contentArray}
                   skills={v.skills}
+                  reportURL={v?.reportURL}
                   siteURL={v?.siteURL}
                 />
               ))}
