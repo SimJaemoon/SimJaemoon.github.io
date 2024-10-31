@@ -82,6 +82,8 @@ export const developProjectData: ProjectData[] = [
       'jStat',
       'Framer-Motion',
     ],
+    figmaURL:
+      'https://www.figma.com/design/ETCfSlv0NkIsBxYETQTLTa/%EC%9E%91%EC%97%85%EC%A4%91_usability-analysis-dashboard?node-id=0-1&t=Le9OQof0MuJpWGmK-1',
   },
   {
     title: 'Portfolio 반응형 웹사이트',
