@@ -58,6 +58,7 @@ export type ProjectData = {
   figmaURL?: string;
   githubURL?: string;
   summary: string;
+  keywords?: string[];
   contents?: string[];
   contentArray?: { step: string; description: string[] }[];
   skills: string[];
@@ -71,19 +72,32 @@ export const developProjectData: ProjectData[] = [
     title: '사용성 통계 분석 대시보드',
     timeline: '2024.10 ~ (1인 프로젝트)',
     summary:
-      '데이터를 입력해 모수/비모수 통계 분석을 수행할 수 있고, 사용성 분석 결과를 차트 & 애니메이션으로 이해하기 쉽게 제공',
+      '데이터를 복사 붙여넣기만 하면, 사용성 관련 다양한 통계 분석 결과를 시각화해 제공',
+    keywords: [
+      '반응형 웹',
+      'React 프레임워크',
+      'CSS 전처리기',
+      '전역 상태 관리',
+      'Spreadsheet',
+      'Chart',
+      '통계 분석',
+      '애니메이션',
+    ],
     contents: ['작업 중'],
     skills: [
       'TypeScript',
       'Next.js',
       'SCSS',
       'Redux',
+      'Handsontable',
       'Chart.js',
       'jStat',
       'Framer-Motion',
     ],
     figmaURL:
       'https://www.figma.com/design/ETCfSlv0NkIsBxYETQTLTa/%EC%9E%91%EC%97%85%EC%A4%91_usability-analysis-dashboard?node-id=0-1&t=Le9OQof0MuJpWGmK-1',
+    githubURL: 'https://github.com/SimJaemoon/usability-analysis-dashboard',
+    siteURL: 'https://usability-analysis-dashboard.vercel.app/',
   },
   {
     title: 'Portfolio 반응형 웹사이트',
@@ -93,6 +107,7 @@ export const developProjectData: ProjectData[] = [
     githubURL: 'https://github.com/SimJaemoon/SimJaemoon.github.io',
     summary:
       'Portfolio 에 2가지 경험(1. 프론트엔드 개발자  2. HCI 연구원)을 Seamless 하게 녹여내는 page 구현',
+    keywords: ['반응형 웹', 'React 프레임워크', 'CSS 프레임워크'],
     contentArray: [
       {
         step: '콘텐츠 설계',
@@ -136,6 +151,14 @@ export const developProjectData: ProjectData[] = [
     githubURL: 'https://github.com/simJaemoon/food-search/',
     summary:
       'X세대 온라인 식료품 구매 거부감을 해소하기 위한, 새로운 온라인 장보기 경험 설계',
+    keywords: [
+      '반응형 웹',
+      'React 프레임워크',
+      'CSS 프레임워크',
+      '컴포넌트 관리',
+      'Data fetching',
+      'PostgreSQL',
+    ],
     contentArray: [
       {
         step: '기획 [24.04 ~ 06]',
