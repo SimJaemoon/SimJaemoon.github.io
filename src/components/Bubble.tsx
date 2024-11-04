@@ -8,6 +8,7 @@ export default function Bubble({
   figmaURL,
   githubURL,
   summary,
+  keywords,
   contents,
   contentArray,
   skills,
@@ -52,6 +53,18 @@ export default function Bubble({
       {/* Bubble-Content */}
       <div className="rounded-b-[12px] bg-background px-4 pb-4 pt-2">
         <div className="text-16 font-bold">{summary}</div>
+        <div
+          className={`mt-2 flex flex-wrap justify-center gap-x-2 gap-y-1 rounded-[8px] px-3 py-1 text-14 text-background ${keywords ? '' : 'hidden'}`}
+        >
+          {keywords?.map((v, i) => (
+            <span
+              key={i}
+              className="rounded-[8px] bg-onBackground/60 px-2 py-1"
+            >
+              {v}
+            </span>
+          ))}
+        </div>
         {contents && (
           <ul className="mt-2 list-disc pl-6 text-14">
             {contents.map((v, i) => (

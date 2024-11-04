@@ -28,6 +28,7 @@ export default function ProjectBubbles() {
                   figmaURL={v.figmaURL}
                   githubURL={v.githubURL}
                   summary={v.summary}
+                  keywords={v.keywords}
                   contents={v?.contents}
                   contentArray={v?.contentArray}
                   skills={v.skills}
