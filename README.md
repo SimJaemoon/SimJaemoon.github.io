@@ -6,7 +6,7 @@
 
 [프로젝트 보고서 보러 가기 ↗](https://github.com/SimJaemoon/SimJaemoon.github.io/blob/main/document/Portfolio_summary.pdf)
 
-[배포된 사이트 보러 가기 ↗](https://simjaemoon.github.io/)
+[배포된 사이트 보러 가기 ↗](https://noah-simjaemoon.github.io/)
 
 - 기술 : TypeScript, Next.js, TailwindCSS
 
